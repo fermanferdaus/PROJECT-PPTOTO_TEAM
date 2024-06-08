@@ -1,6 +1,10 @@
 package com.uti.panduansuksesbertanisayuran.Class
 
-class db {
+import android.content.Context
+import android.database.sqlite.SQLiteOpenHelper
+
+class db(private val context: Context) :
+    SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     companion object {
         private const val DATABASE_NAME = "UserDatabase.db"
         private const val DATABASE_VERSION = 1
