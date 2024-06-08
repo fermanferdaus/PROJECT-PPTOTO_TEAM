@@ -2,6 +2,7 @@ package com.uti.panduansuksesbertanisayuran.Activity
 
 import android.os.Bundle
 import android.webkit.WebView
+import android.webkit.WebViewClient
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -26,6 +27,9 @@ class WebViewActivity : AppCompatActivity() {
 
 //        Mendapatkan referensi ke WebView dari layout
         val webView: WebView = findViewById(R.id.webView)
+
+//        Mengatur WebViewClient untuk menangani navigasi dan rendering halaman web
+        webView.webViewClient = WebViewClient()
 
 
         enableEdgeToEdge()
