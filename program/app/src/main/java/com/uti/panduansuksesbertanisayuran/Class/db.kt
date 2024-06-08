@@ -1,5 +1,6 @@
 package com.uti.panduansuksesbertanisayuran.Class
 
+import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
@@ -22,9 +23,21 @@ class db(private val context: Context) :
                 "$COLUMN_PASSWORD TEXT)")
         db?.execSQL(createTableQuery)
     }
+
     //  Method yang dijalankan saat database di-upgrade
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         val dropTableQuery = "DROP TABLE IF EXISTS $TABLE_NAME"
         db?.execSQL(dropTableQuery)
         onCreate(db)
+    }
+    // Method untuk memasukkan pengguna baru ke database
+    fun insertUser(username: String, password: String): Long {
+        val values = ContentValues().apply {
+            put(COLUMN_USERNAME, username)
+            put(COLUMN_PASSWORD, password)
+        }
+        val db = writableDatabase
+        return db.insert(TABLE_NAME, null, values)
+    }
+
 }
