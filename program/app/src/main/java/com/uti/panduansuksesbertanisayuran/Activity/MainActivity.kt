@@ -1,5 +1,6 @@
 package com.uti.panduansuksesbertanisayuran.Activity
 
+import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -16,6 +17,9 @@ class MainActivity : AppCompatActivity() {
 
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        databaseHelper = db(this)
+        sharedPref = getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
 
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
