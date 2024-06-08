@@ -5,16 +5,22 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.uti.panduansuksesbertanisayuran.Class.db
 import com.uti.panduansuksesbertanisayuran.R
 import com.uti.panduansuksesbertanisayuran.databinding.ActivitySignupBinding
 
 class SignupActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
 //  Binding SignupActivity
         val binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+//  Binding Database
+        databaseHelper = db(this)
+
 
 
         enableEdgeToEdge()
@@ -24,5 +30,7 @@ class SignupActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+
     }
 }
