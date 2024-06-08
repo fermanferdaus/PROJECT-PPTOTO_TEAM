@@ -34,9 +34,9 @@ class ContentAdapter(
             onItemClick(title, url)
         }
     }
-
+//    Mengembalikan jumlah item dalam daftar
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return contentList.size
     }
 
 }
