@@ -44,7 +44,32 @@
                     android:paddingLeft="15dp"
                     android:paddingRight="15dp"
                     tools:layout_editor_absoluteX="15dp"
-                    tools:layout_editor_absoluteY="432dp"></LinearLayout>
+                    tools:layout_editor_absoluteY="432dp">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="96dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="40dp"
+                        android:src="@drawable/organic" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center"
+                        android:text="Tentang Aplikasi"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:text="Aplikasi ini di rancang untuk membantu masyarakat dalam bertani sayuran dengan memanfaatkan lahan yang ada di sekitar rumah. Dalam aplikasi ini akan ada panduan untuk bertani beberapa jenis sayuran yang mudah untuk di budidayakan."
+                        android:textSize="20sp" /
+                </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
