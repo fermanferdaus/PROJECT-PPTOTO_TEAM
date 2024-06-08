@@ -29,8 +29,10 @@ class ContentAdapter(
         val (title, url) = contentList[position]
 //        Mengatur teks TextView dengan judul dari pasangan
         holder.itemText.text = title
-
-
+//        Mengatur onClickListener untuk item, memanggil callback dengan title dan URL saat diklik
+        holder.itemView.setOnClickListener {
+            onItemClick(title, url)
+        }
     }
 
     override fun getItemCount(): Int {
