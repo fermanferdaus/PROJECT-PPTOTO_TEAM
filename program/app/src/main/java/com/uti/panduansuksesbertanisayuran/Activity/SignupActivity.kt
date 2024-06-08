@@ -24,7 +24,12 @@ class SignupActivity : AppCompatActivity() {
 //  Binding Database
         databaseHelper = db(this)
 
-//
+//  event btnRegis
+        binding.btnRegis.setOnClickListener {
+            val user = binding.Username.text.toString()
+            val pass = binding.Password.text.toString()
+            signupDatabase(user, pass)
+        }
 
 
         enableEdgeToEdge()
