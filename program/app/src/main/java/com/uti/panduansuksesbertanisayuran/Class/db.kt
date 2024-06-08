@@ -22,4 +22,9 @@ class db(private val context: Context) :
                 "$COLUMN_PASSWORD TEXT)")
         db?.execSQL(createTableQuery)
     }
+    //  Method yang dijalankan saat database di-upgrade
+    override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+        val dropTableQuery = "DROP TABLE IF EXISTS $TABLE_NAME"
+        db?.execSQL(dropTableQuery)
+        onCreate(db)
 }
