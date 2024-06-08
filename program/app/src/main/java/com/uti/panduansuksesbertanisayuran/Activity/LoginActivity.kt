@@ -29,6 +29,13 @@ class LoginActivity : AppCompatActivity() {
         databaseHelper = db(this)
         sharedPref = getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
 
+    //  Event btnLogin
+        binding.btnLogin.setOnClickListener {
+            val username = binding.Username.text.toString()
+            val password = binding.Password.text.toString()
+            loginDatabase(username, password)
+        }
+
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
