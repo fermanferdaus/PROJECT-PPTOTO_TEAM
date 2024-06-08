@@ -70,6 +70,13 @@ class LoginActivity : AppCompatActivity() {
                 putString("logged_in_user", username)
                 apply()
             }
+
+    //  Menampilkan login sukses
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        } else {
+            Toast.makeText(this, "Username atau Password tidak sesuai !", Toast.LENGTH_SHORT).show()
         }
     }
 }
