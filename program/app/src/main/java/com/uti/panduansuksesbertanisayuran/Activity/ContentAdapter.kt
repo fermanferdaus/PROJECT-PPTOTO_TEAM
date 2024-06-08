@@ -27,6 +27,9 @@ class ContentAdapter(
     override fun onBindViewHolder(holder: ContentAdapter.ViewHolder, position: Int) {
 //        Mendapatkan pasangan (title, url) dari posisi saat ini dalam daftar
         val (title, url) = contentList[position]
+//        Mengatur teks TextView dengan judul dari pasangan
+        holder.itemText.text = title
+
 
     }
 
