@@ -1,9 +1,15 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
-    <style name="Base.Theme.PanduanSuksesBertaniSayuran" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.PanduanSuksesBertaniSayuran" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">#2196F3</item>
+        <item name="colorPrimaryVariant">#2196F3</item>
+        <item name="colorSecondary">#2196F3</item>
+        <item name="android:statusBarColor">#2196F3</item> <!-- Warna status bar di sini -->
     </style>
 
-    <style name="Theme.PanduanSuksesBertaniSayuran" parent="Base.Theme.PanduanSuksesBertaniSayuran" />
+    <style name="Theme.PanduanSuksesBertaniSayuran" parent="Base.Theme.PanduanSuksesBertaniSayuran">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 </resources>
