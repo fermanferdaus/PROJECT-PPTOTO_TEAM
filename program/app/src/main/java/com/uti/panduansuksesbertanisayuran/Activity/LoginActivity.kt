@@ -1,5 +1,6 @@
 package com.uti.panduansuksesbertanisayuran.Activity
 
+import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -23,6 +24,10 @@ class LoginActivity : AppCompatActivity() {
     //   variabel binding untuk LoginActivity
         val binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+    //  binding data helper
+        databaseHelper = db(this)
+        sharedPref = getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
 
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
