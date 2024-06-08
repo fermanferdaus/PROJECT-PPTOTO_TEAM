@@ -82,6 +82,10 @@
                     android:gravity="center_horizontal"
                     android:text="Belum mempunyai akun ?" />
 
+                <Space
+                    android:layout_width="11dp"
+                    android:layout_height="wrap_content" />
+
             </LinearLayout>
 
     </LinearLayout>
