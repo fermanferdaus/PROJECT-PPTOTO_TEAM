@@ -64,5 +64,12 @@ class LoginActivity : AppCompatActivity() {
         }
         val userExists = databaseHelper.readUser(username, password)
         if (userExists) {
+
+    //  Simpan username ke SharedPreferences
+            with(sharedPref.edit()) {
+                putString("logged_in_user", username)
+                apply()
+            }
+        }
     }
 }
