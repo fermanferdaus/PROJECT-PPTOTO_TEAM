@@ -10,6 +10,7 @@ import com.uti.panduansuksesbertanisayuran.R
 import com.uti.panduansuksesbertanisayuran.databinding.ActivitySignupBinding
 
 class SignupActivity : AppCompatActivity() {
+        private lateinit var databaseHelper: db
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
