@@ -26,6 +26,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
         }
+
+        binding.cdProfil.setOnClickListener {
+            val intent = Intent(this, ProfilActivity::class.java)
+            startActivity(intent)
+        }
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
