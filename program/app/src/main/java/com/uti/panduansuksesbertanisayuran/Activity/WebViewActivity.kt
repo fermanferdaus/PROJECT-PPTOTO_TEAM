@@ -33,6 +33,8 @@ class WebViewActivity : AppCompatActivity() {
 
 //        Mengaktifkan JavaScript di WebView
         webView.settings.javaScriptEnabled = true
+//        Memuat URL yang diperoleh dari intent ke dalam WebView
+        webView.loadUrl(url)
 
 
         enableEdgeToEdge()
