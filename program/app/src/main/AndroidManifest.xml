@@ -15,6 +15,9 @@
         android:theme="@style/Theme.PanduanSuksesBertaniSayuran"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.SplashActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.WebViewActivity"
             android:exported="false" />
         <activity
