@@ -1,5 +1,6 @@
 package com.uti.panduansuksesbertanisayuran.Class
 
+import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
@@ -50,5 +51,18 @@ class db(private val context: Context) :
         cursor.close()
         return userExists
     }
+    @SuppressLint("Range")
+    fun getUsername(): String {
+        val db = readableDatabase
+        val query = "SELECT $COLUMN_USERNAME FROM $TABLE_NAME LIMIT 1"
+        val cursor = db.rawQuery(query, null)
 
+        var username = ""
+        if (cursor != null && cursor.moveToFirst()) {
+            username = cursor.getString(cursor.getColumnIndex(COLUMN_USERNAME))
+        }
+
+        cursor.close()
+        return username
+    }
 }
