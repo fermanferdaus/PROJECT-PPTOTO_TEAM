@@ -66,4 +66,9 @@ class db(private val context: Context) :
         cursor.close()
         return username
     }
+    // Method untuk menghapus semua data pengguna dari tabel
+    fun deleteUser() {
+        val db = writableDatabase
+        db.delete(TABLE_NAME, null, null)
+    }
 }
