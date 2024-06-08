@@ -8,6 +8,12 @@ import androidx.core.view.WindowInsetsCompat
 import com.uti.panduansuksesbertanisayuran.R
 
 class SplashActivity : AppCompatActivity() {
+
+    private val SPLASH_TIME_OUT: Long = 3000 //3 detik
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
