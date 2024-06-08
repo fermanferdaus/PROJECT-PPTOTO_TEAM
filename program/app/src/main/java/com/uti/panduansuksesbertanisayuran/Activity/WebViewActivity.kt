@@ -31,6 +31,9 @@ class WebViewActivity : AppCompatActivity() {
 //        Mengatur WebViewClient untuk menangani navigasi dan rendering halaman web
         webView.webViewClient = WebViewClient()
 
+//        Mengaktifkan JavaScript di WebView
+        webView.settings.javaScriptEnabled = true
+
 
         enableEdgeToEdge()
         setContentView(R.layout.activity_web_view)
