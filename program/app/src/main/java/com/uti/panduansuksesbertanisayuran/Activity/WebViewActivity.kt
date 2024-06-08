@@ -14,6 +14,9 @@ class WebViewActivity : AppCompatActivity() {
 //        Mengatur layout activity_web_view sebagai tampilan untuk aktivitas ini
         setContentView(R.layout.activity_web_view)
 
+//        Mendapatkan data 'title' dari intent yang memulai aktivitas ini
+        val title = intent.getStringExtra("title") ?: "Untitled"
+
         enableEdgeToEdge()
         setContentView(R.layout.activity_web_view)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
