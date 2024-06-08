@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -54,4 +55,14 @@ class LoginActivity : AppCompatActivity() {
 
     // Membaca username dan password dari SQlite
     private fun loginDatabase(username: String, password: String) {
+
+    // Memeriksa apakah username dan password sudah diisi
+        if (username.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, "Username atau Password tidak boleh kosong !", Toast.LENGTH_SHORT)
+                .show()
+            return
+        }
+        val userExists = databaseHelper.readUser(username, password)
+        if (userExists) {
+    }
 }
