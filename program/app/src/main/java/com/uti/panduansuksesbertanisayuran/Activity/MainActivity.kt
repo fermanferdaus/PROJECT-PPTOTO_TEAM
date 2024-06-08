@@ -32,6 +32,17 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.cdOut.setOnClickListener {
+            // Hapus username dari SharedPreferences
+            with(sharedPref.edit()) {
+                remove("logged_in_user")
+                apply()
+            }
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
