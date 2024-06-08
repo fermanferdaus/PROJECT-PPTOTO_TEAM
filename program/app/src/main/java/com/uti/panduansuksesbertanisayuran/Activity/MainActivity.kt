@@ -7,11 +7,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.uti.panduansuksesbertanisayuran.R
+import com.uti.panduansuksesbertanisayuran.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var databaseHelper: db
     private lateinit var sharedPref: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
