@@ -49,7 +49,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1" >
+                android:layout_weight="1">
 
                 <LinearLayout
                     android:id="@+id/cdMenu"
@@ -65,7 +65,13 @@
                         android:layout_weight="1"
                         app:srcCompat="@drawable/menu" />
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
