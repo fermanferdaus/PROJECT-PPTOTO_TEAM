@@ -18,7 +18,10 @@ class ContentAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContentAdapter.ViewHolder {
-        TODO("Not yet implemented")
+//        Menginflate layout item_list_content untuk setiap item dalam RecyclerView
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_list_content, parent, false)
+        return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ContentAdapter.ViewHolder, position: Int) {
