@@ -1,6 +1,7 @@
 package com.uti.panduansuksesbertanisayuran.Activity
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -21,6 +22,10 @@ class MainActivity : AppCompatActivity() {
         databaseHelper = db(this)
         sharedPref = getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
 
+        binding.cdMenu.setOnClickListener {
+            val intent = Intent(this, MenuActivity::class.java)
+            startActivity(intent)
+        }
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
