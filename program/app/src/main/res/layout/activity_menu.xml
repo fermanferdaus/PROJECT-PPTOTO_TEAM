@@ -9,4 +9,11 @@
     android:background="#E6ECF1"
     tools:context=".Activity.MenuActivity">
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+  <FrameLayout
+      android:id="@+id/frameLayout"
+      android:layout_width="match_parent"
+      android:layout_height="250dp"
+      android:background="@color/bg">
+
+  </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
