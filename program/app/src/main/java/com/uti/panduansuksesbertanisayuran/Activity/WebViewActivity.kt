@@ -10,6 +10,10 @@ import com.uti.panduansuksesbertanisayuran.R
 class WebViewActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+//        Mengatur layout activity_web_view sebagai tampilan untuk aktivitas ini
+        setContentView(R.layout.activity_web_view)
+
         enableEdgeToEdge()
         setContentView(R.layout.activity_web_view)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
