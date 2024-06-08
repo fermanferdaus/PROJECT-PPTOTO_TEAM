@@ -25,7 +25,9 @@ class ContentAdapter(
     }
 
     override fun onBindViewHolder(holder: ContentAdapter.ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+//        Mendapatkan pasangan (title, url) dari posisi saat ini dalam daftar
+        val (title, url) = contentList[position]
+
     }
 
     override fun getItemCount(): Int {
