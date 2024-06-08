@@ -20,8 +20,6 @@ class SplashActivity : AppCompatActivity() {
             finish()
         }, SPLASH_TIME_OUT)
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_splash)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
