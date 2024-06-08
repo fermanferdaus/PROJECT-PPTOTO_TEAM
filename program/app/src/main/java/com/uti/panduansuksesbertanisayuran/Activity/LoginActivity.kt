@@ -1,5 +1,6 @@
 package com.uti.panduansuksesbertanisayuran.Activity
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +12,11 @@ import com.uti.panduansuksesbertanisayuran.R
 class LoginActivity : AppCompatActivity() {
     // Deklarasi binding untuk data Helper
     private lateinit var databaseHelper: db
+
+    //    deklarasi sharePref
+    private lateinit var sharedPref: SharedPreferences
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
