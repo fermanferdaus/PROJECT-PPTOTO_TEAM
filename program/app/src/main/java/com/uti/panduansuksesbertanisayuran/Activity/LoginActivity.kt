@@ -1,6 +1,7 @@
 package com.uti.panduansuksesbertanisayuran.Activity
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -34,6 +35,13 @@ class LoginActivity : AppCompatActivity() {
             val username = binding.Username.text.toString()
             val password = binding.Password.text.toString()
             loginDatabase(username, password)
+        }
+
+    //  EventtxRegis
+        binding.txRegis.setOnClickListener {
+            val intent = Intent(this, SignupActivity::class.java)
+            startActivity(intent)
+            finish()
         }
 
         enableEdgeToEdge()
