@@ -1,4 +1,4 @@
-package com.uti.panduansuksesbertanisayuran.Activity
+package com.uti.panduansuksesbertanisayuran.Class
 
 import android.view.LayoutInflater
 import android.view.View
@@ -17,14 +17,14 @@ class ContentAdapter(
         val itemText: TextView = view.findViewById(R.id.item_text)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContentAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 //        Menginflate layout item_list_content untuk setiap item dalam RecyclerView
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_list_content, parent, false)
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ContentAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 //        Mendapatkan pasangan (title, url) dari posisi saat ini dalam daftar
         val (title, url) = contentList[position]
 //        Mengatur teks TextView dengan judul dari pasangan
