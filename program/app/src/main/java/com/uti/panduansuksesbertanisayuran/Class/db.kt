@@ -51,6 +51,7 @@ class db(private val context: Context) :
         cursor.close()
         return userExists
     }
+    //Method untuk mengambil username pertama dari tabel
     @SuppressLint("Range")
     fun getUsername(): String {
         val db = readableDatabase
