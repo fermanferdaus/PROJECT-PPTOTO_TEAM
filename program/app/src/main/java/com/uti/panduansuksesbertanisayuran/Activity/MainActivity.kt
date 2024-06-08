@@ -43,6 +43,9 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
 
+        val username = getLoggedInUsername()
+        binding.textUsername.text = username
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
