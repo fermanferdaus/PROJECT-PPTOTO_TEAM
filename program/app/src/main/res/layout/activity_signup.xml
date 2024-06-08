@@ -103,8 +103,6 @@
                         android:text="Login"
                         android:textColor="#2196F3" />
                 </LinearLayout>
-
-
             </LinearLayout>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
