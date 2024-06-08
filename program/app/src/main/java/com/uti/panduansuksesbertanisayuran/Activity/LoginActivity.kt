@@ -43,7 +43,6 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -52,4 +51,7 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
     }
+
+    // Membaca username dan password dari SQlite
+    private fun loginDatabase(username: String, password: String) {
 }
