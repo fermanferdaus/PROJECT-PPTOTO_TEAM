@@ -20,6 +20,10 @@ class WebViewActivity : AppCompatActivity() {
 //        Mendapatkan data 'url' dari intent yang memulai aktivitas ini
         val url = intent.getStringExtra("url") ?: ""
 
+//        Mengatur judul dari ActionBar dengan nilai 'title'
+        supportActionBar?.title = title
+
+
 
         enableEdgeToEdge()
         setContentView(R.layout.activity_web_view)
