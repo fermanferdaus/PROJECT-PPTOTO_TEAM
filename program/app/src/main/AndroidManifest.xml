@@ -24,7 +24,7 @@
             android:name=".Activity.ProfilActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.SplashActivity"
+            android:name=".Activity.MenuActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.WebViewActivity"
@@ -33,7 +33,7 @@
             android:name=".Activity.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.MenuActivity"
+            android:name=".Activity.SplashActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
