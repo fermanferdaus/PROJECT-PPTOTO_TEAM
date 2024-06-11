@@ -13,7 +13,16 @@ class ContentAdapter {
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_list_content, parent, false) // Meng-inflate layout item_list_content
+            .inflate(R.layout.item_list_content, parent, false)
         return ViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val (title, url) = contentList[position]
+        holder.itemText.text = title
+
+        holder.itemView.setOnClickListener {
+            onItemClick(title, url)
+        }
     }
 }
