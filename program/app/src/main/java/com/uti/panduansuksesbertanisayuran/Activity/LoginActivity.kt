@@ -14,7 +14,7 @@ import com.uti.panduansuksesbertanisayuran.R
 import com.uti.panduansuksesbertanisayuran.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
-    // Deklarasi binding untuk data Helper
+    //    deklarasi binding untuk databaseHelper
     private lateinit var databaseHelper: db
 
     //    deklarasi sharePref
@@ -23,29 +23,30 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-    //   variabel binding untuk LoginActivity
+//        buat variabel binding untuk LoginActivity
         val binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-    //  binding data helper
+//        binding databaseHelper
         databaseHelper = db(this)
+
         sharedPref = getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
 
-    //  Event btnLogin
+//        event btnLogin
         binding.btnLogin.setOnClickListener {
             val username = binding.Username.text.toString()
             val password = binding.Password.text.toString()
             loginDatabase(username, password)
         }
 
-    //  EventtxRegis
+//        event txRegis
         binding.txRegis.setOnClickListener {
             val intent = Intent(this, SignupActivity::class.java)
             startActivity(intent)
             finish()
         }
+
         enableEdgeToEdge()
-        setContentView(R.layout.activity_login)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -53,25 +54,24 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    // Membaca username dan password dari SQlite
+    //    membaca username dan password dari SQLite
     private fun loginDatabase(username: String, password: String) {
-
-    // Memeriksa apakah username dan password sudah diisi
+//        periksa apakah username dan password sudah diisi
         if (username.isEmpty() || password.isEmpty()) {
             Toast.makeText(this, "Username atau Password tidak boleh kosong !", Toast.LENGTH_SHORT)
                 .show()
             return
         }
+
         val userExists = databaseHelper.readUser(username, password)
         if (userExists) {
-
-    //  Simpan username ke SharedPreferences
+            // Simpan username ke SharedPreferences
             with(sharedPref.edit()) {
                 putString("logged_in_user", username)
                 apply()
             }
 
-    //  Menampilkan login sukses
+//            Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()

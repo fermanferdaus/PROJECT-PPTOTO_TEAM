@@ -12,26 +12,26 @@ import com.uti.panduansuksesbertanisayuran.R
 import com.uti.panduansuksesbertanisayuran.databinding.ActivitySignupBinding
 
 class SignupActivity : AppCompatActivity() {
-        private lateinit var databaseHelper: db
+    private lateinit var databaseHelper: db
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-//  Binding SignupActivity
+        // Binding SignupActivity
         val binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//  Binding Database
+        // Binding database
         databaseHelper = db(this)
 
-//  event btnRegis
+//        event btnRegis
         binding.btnRegis.setOnClickListener {
             val user = binding.Username.text.toString()
             val pass = binding.Password.text.toString()
             signupDatabase(user, pass)
         }
 
-//  event txLogin
+//        event txLogin
         binding.txLogin.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
@@ -39,7 +39,6 @@ class SignupActivity : AppCompatActivity() {
         }
 
         enableEdgeToEdge()
-        setContentView(R.layout.activity_signup)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -47,23 +46,23 @@ class SignupActivity : AppCompatActivity() {
         }
     }
 
-//  Insert username dan password ke dalam SQLite
-private fun signupDatabase(username: String, password: String) {
-    if (username.isEmpty() || password.isEmpty()) {
-        Toast.makeText(this, "Username atau Password tidak boleh kosong !", Toast.LENGTH_SHORT)
-            .show()
-        return
-    }
+    //    insert username dan password ke SQLite
+    private fun signupDatabase(username: String, password: String) {
+        if (username.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, "Username atau Password tidak boleh kosong !", Toast.LENGTH_SHORT)
+                .show()
+            return
+        }
 
-    val insertedRowId = databaseHelper.insertUser(username, password)
-    if (insertedRowId != -1L) {
-        Toast.makeText(this, "Signup Successful", Toast.LENGTH_SHORT).show()
-        val intent = Intent(this, LoginActivity::class.java)
-        startActivity(intent)
-        finish()
-    } else {
-        Toast.makeText(this, "Signup Failed", Toast.LENGTH_SHORT).show()
-     }
-}
+        val insertedRowId = databaseHelper.insertUser(username, password)
+        if (insertedRowId != -1L) {
+            Toast.makeText(this, "Signup Successful", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        } else {
+            Toast.makeText(this, "Signup Failed", Toast.LENGTH_SHORT).show()
+        }
+    }
 
 }
