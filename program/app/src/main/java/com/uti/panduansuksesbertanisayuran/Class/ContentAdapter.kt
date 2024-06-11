@@ -7,7 +7,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.uti.panduansuksesbertanisayuran.R
 
-class ContentAdapter {
+class ContentAdapter (
+    private val contentList: List<Pair<String, String>>, // Pair of title and URL
+    private val onItemClick: (String, String) -> Unit // Callback with title and URL
+) : RecyclerView.Adapter<ContentAdapter.ViewHolder>() {
+
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val itemText: TextView = view.findViewById(R.id.item_text) // TextView untuk menampilkan judul item
     }
@@ -24,5 +28,8 @@ class ContentAdapter {
         holder.itemView.setOnClickListener {
             onItemClick(title, url)
         }
+    }
+    override fun getItemCount(): Int {
+        return contentList.size
     }
 }
