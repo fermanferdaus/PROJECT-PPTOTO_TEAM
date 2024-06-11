@@ -56,4 +56,8 @@ class MainActivity : AppCompatActivity() {
             insets
         }
     }
+    private fun getLoggedInUsername(): String {
+        // Ambil username dari SharedPreferences
+        return sharedPref.getString("logged_in_user", "Guest") ?: "Guest"
+    }
 }
