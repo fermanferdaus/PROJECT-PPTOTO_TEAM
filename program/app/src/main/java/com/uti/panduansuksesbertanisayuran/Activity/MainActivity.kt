@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.uti.panduansuksesbertanisayuran.Class.db
 import com.uti.panduansuksesbertanisayuran.R
 import com.uti.panduansuksesbertanisayuran.databinding.ActivityMainBinding
 
